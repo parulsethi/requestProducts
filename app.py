@@ -17,7 +17,7 @@ def fetch_data():
 
 # Load data
 df = fetch_data()
-
+df['productImage'] = df['productImage'].apply(lambda x: x[0] if isinstance(x, list) else x)
 # Streamlit UI
 st.title("Live Data Viewer")
 st.write("This table updates when the page is refreshed.")
