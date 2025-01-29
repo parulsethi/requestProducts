@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 
 # API URL (Replace with your actual API)
-API_URL = "https://api.example.com/data"
+API_URL = "https://6yazzrln3tcxp4biq7fn3b5fzq0djvug.lambda-url.ap-south-1.on.aws/"
 
 # Fetch JSON data from API
 @st.cache_data
