@@ -23,4 +23,5 @@ st.title("Requested Products")
 # st.write("This table updates when the page is refreshed.")
 
 # Show data table
-st.dataframe(df)
+# st.dataframe(df)
+st.dataframe(df, height=600, width=1200)
