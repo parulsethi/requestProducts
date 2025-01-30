@@ -24,4 +24,8 @@ st.title("Requested Products")
 
 # Show data table
 # st.dataframe(df)
-st.dataframe(df, height=300, width=2000)
+# st.dataframe(df, height=300, width=2000)
+from st_aggrid import AgGrid
+
+# Display DataFrame with AgGrid
+AgGrid(df)
