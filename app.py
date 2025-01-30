@@ -19,8 +19,8 @@ def fetch_data():
 df = fetch_data()
 df['productImage'] = df['productImage'].apply(lambda x: x[0] if isinstance(x, list) else x)
 # Streamlit UI
-st.title("Live Data Viewer")
-st.write("This table updates when the page is refreshed.")
+st.title("Requested Products")
+# st.write("This table updates when the page is refreshed.")
 
 # Show data table
 st.dataframe(df)
