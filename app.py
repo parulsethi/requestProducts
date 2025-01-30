@@ -24,4 +24,4 @@ st.title("Requested Products")
 
 # Show data table
 # st.dataframe(df)
-st.dataframe(df, height=400, width=1600)
+st.dataframe(df, height=300, width=2000)
