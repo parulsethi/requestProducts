@@ -31,4 +31,4 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-st.dataframe(df, height=300)
+st.dataframe(df, height=400)
