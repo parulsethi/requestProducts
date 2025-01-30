@@ -42,13 +42,14 @@ def transform_record(record):
         transformed[new_key] = value  # Keep other values as is
 
     return transformed
-    
+
+df.rename(columns=FIELD_RENAME_MAP, inplace=True)
+
 # Streamlit UI
 st.title("Requested Products")
 # st.write("This table updates when the page is refreshed.")
 
 # Show data table
-# st.dataframe(df)
 st.markdown("""
     <style>
     .dataframe-container {
@@ -56,4 +57,5 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-st.dataframe(df, height=400)
+
+st.dataframe(df, height=350)
