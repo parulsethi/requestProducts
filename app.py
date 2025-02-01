@@ -67,7 +67,8 @@ vendor_filter = st.sidebar.multiselect("Filter by Vendor", df["Vendor"].unique()
 
 # Apply filters
 filtered_df = df[(df["Type"].isin(type_filter)) & (df["Vendor"].isin(vendor_filter)) ]
-
+filtered_df = filtered_df.astype(str)
+print(filtered_df)
 
 # st.dataframe(df, height=350, use_container_width=True)
 st.data_editor(filtered_df, height=350, use_container_width=True)
