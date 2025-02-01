@@ -61,17 +61,16 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 df = df.astype(str)
-st.dataframe(df)
+# st.dataframe(df)
 # Sidebar filters
-# type_filter = st.sidebar.multiselect("Filter by Shop type", df["Type"].unique(), default=df["Type"].unique())
-# vendor_filter = st.sidebar.multiselect("Filter by Vendor", df["Vendor"].unique(), default=df["Vendor"].unique())
-# location_filter = st.sidebar.multiselect("Filter by Location", df["Location"].unique(), default=df["Location"].unique())
+type_filter = st.sidebar.multiselect("Filter by Shop type", df["Type"].unique(), default=df["Type"].unique())
+vendor_filter = st.sidebar.multiselect("Filter by Vendor", df["Vendor"].unique(), default=df["Vendor"].unique())
+location_filter = st.sidebar.multiselect("Filter by Location", df["Location"].unique(), default=df["Location"].unique())
 
-# # Apply filters
-# filtered_df = df[(df["Type"].isin(type_filter)) & (df["Vendor"].isin(vendor_filter)) & (df["Location"].isin(location_filter))]
-# filtered_df = filtered_df.astype(str)
-# print(filtered_df)
+# Apply filters
+filtered_df = df[(df["Type"].isin(type_filter)) & (df["Vendor"].isin(vendor_filter)) & (df["Location"].isin(location_filter))]
+filtered_df = filtered_df.astype(str)
 
-# # st.dataframe(df, height=350, use_container_width=True)
-# st.data_editor(filtered_df, height=350, use_container_width=True)
+# st.dataframe(df, height=350, use_container_width=True)
+st.data_editor(filtered_df, height=350, use_container_width=True)
 
