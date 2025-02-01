@@ -60,11 +60,11 @@ st.markdown("""
 
 # Sidebar filters
 type_filter = st.sidebar.multiselect("Filter by Shop type", df["Type"].unique(), default=df["Type"].unique())
-vendor_filter = st.sidebar.multiselect("Filter by Vendor", df["Vendor"].unique(), default=df["Vendor"].unique())
+# vendor_filter = st.sidebar.multiselect("Filter by Vendor", df["Vendor"].unique(), default=df["Vendor"].unique())
 location_filter = st.sidebar.multiselect("Filter by Location", df["location_name"].unique(), default=df["location_name"].unique())
 
 # Apply filters
-filtered_df = df[(df["Type"].isin(type_filter)) & (df["Vendor"].isin(vendor_filter)) & (df["location_name"].isin(vendor_filter))]
+filtered_df = df[(df["Type"].isin(type_filter)) & (df["location_name"].isin(vendor_filter))]
 
 
 # st.dataframe(df, height=350, use_container_width=True)
