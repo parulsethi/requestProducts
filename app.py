@@ -34,7 +34,7 @@ FIELD_RENAME_MAP = {
     "timeOfDay": "Time of Day",
     "productType": "Product Type",
     "vendor": "Vendor",
-    "location_name": "Location"
+    "location_name": "Location",
 }
 
 def transform_record(record):
