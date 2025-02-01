@@ -58,4 +58,14 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.dataframe(df, height=350)
+# Sidebar filters
+type_filter = st.sidebar.multiselect("Filter by Vendor type", df["Type"].unique(), default=df["Type"].unique())
+# product_filter = st.sidebar.multiselect("Filter by Product", df["Product"].unique(), default=df["Product"].unique())
+
+# Apply filters
+filtered_df = df[(df["Type"].isin(type_filter))]
+
+
+# st.dataframe(df, height=350, use_container_width=True)
+st.data_editor(filtered_df, height=350, use_container_width=True)
+
