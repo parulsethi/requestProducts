@@ -60,6 +60,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+df = df.astype(str)
 st.dataframe(df)
 # Sidebar filters
 # type_filter = st.sidebar.multiselect("Filter by Shop type", df["Type"].unique(), default=df["Type"].unique())
