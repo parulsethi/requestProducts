@@ -66,7 +66,7 @@ vendor_filter = st.sidebar.multiselect("Filter by Vendor", df["Vendor"].unique()
 location_filter = st.sidebar.multiselect("Filter by Location", df["Location"].unique(), default=df["Location"].unique())
 
 # Apply filters
-filtered_df = df[(df["Type"].isin(type_filter)) & (df["Vendor"].isin(vendor_filter)) & (df["location_name"].isin(vendor_filter))]
+filtered_df = df[(df["Type"].isin(type_filter)) & (df["Vendor"].isin(vendor_filter)) & (df["Location"].isin(vendor_filter))]
 
 
 # st.dataframe(df, height=350, use_container_width=True)
