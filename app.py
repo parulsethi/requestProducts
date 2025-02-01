@@ -18,7 +18,7 @@ def fetch_data():
 # Load data
 df = fetch_data()
 
-df['productImage'] = df['productImage'].apply(lambda x: x[0] if isinstance(x, list) else x)
+df['Product Image'] = df['Product Image'].apply(lambda x: x[0] if isinstance(x, list) else x)
 
 # Define the field name mapping (Old Field → New Field)
 FIELD_RENAME_MAP = {
