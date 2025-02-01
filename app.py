@@ -18,7 +18,7 @@ def fetch_data():
 # Load data
 df = fetch_data()
 
-df['Product Image'] = df['Product Image'].apply(lambda x: x[0] if isinstance(x, list) else x)
+# df['Product Image'] = df['Product Image'].apply(lambda x: x[0] if isinstance(x, list) else x)
 
 # Define the field name mapping (Old Field → New Field)
 FIELD_RENAME_MAP = {
@@ -59,11 +59,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Sidebar filters
-type_filter = st.sidebar.multiselect("Filter by Vendor type", df["Type"].unique(), default=df["Type"].unique())
-# product_filter = st.sidebar.multiselect("Filter by Product", df["Product"].unique(), default=df["Product"].unique())
+type_filter = st.sidebar.multiselect("Filter by Shop type", df["Type"].unique(), default=df["Type"].unique())
+vendor_filter = st.sidebar.multiselect("Filter by Vendor", df["Vendor"].unique(), default=df["Vendor"].unique())
+location_filter = st.sidebar.multiselect("Filter by Location", df["Location"].unique(), default=df["Location"].unique())
 
 # Apply filters
-filtered_df = df[(df["Type"].isin(type_filter))]
+filtered_df = df[(df["Type"].isin(type_filter)) & (df["Vendor"].isin(vendor_filter)) & (df["Location"].isin(vendor_filter))]
 
 
 # st.dataframe(df, height=350, use_container_width=True)
